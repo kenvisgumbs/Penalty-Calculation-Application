@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=(Fields!Year.Value, "PenaltyData")</Value>
+                <Value>=Sum(Fields!Year.Value, "PenaltyData")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -17,8 +17,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Year</rd:DefaultName>
-        <Top>0.54042in</Top>
-        <Left>0.47792in</Left>
+        <Top>1.03in</Top>
+        <Left>0.64458in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <Style>

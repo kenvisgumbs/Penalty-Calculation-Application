@@ -73,6 +73,7 @@ namespace Penalty_Calculation_Application
 
         public List<Contributions> GetContributionList()
         {
+            
             return completeContributionList;
         }
 

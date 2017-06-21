@@ -197,6 +197,7 @@ namespace Penalty_Calculation_Application
             }
 
             completeList.OutputContribution();
+            
             ContributionsBindingSource.DataSource = completeList.GetContributionList();
             reportViewer1.RefreshReport();
             
@@ -219,7 +220,7 @@ namespace Penalty_Calculation_Application
             //MessageBox.Show(new ContributionDetails(year, month, contribution, (contribution * 0.05), surchargeSum,(surchargeSum + contribution + (contribution * 0.05))).Details());
 
             if (periods == 2)
-                return new Contributions(year, month, contribution, (contribution * 0.05), 0, contribution+(contribution * 0.05));
+                return new Contributions(year, month, contribution, Math.Round((contribution * 0.05),2,MidpointRounding.AwayFromZero), 0, Math.Round(contribution +(contribution * 0.05),2,MidpointRounding.AwayFromZero));
                 ////return new ContributionDetails(year, month, contribution, (contribution * 0.05), 0, 0);
 
             if (periods <= 1)
@@ -228,13 +229,13 @@ namespace Penalty_Calculation_Application
 
             for (int i = 0; i <= periods - 4; i++)
             {
-                fivepercentUp += Math.Round(fivepercentUp * 0.02,2, MidpointRounding.AwayFromZero);
+                fivepercentUp += fivepercentUp * 0.02;
                 twopercent = fivepercentUp * 0.02;
-                surchargeSum += Math.Round(twopercent, 2, MidpointRounding.AwayFromZero);
+                surchargeSum += twopercent;
             }
             //MessageBox.Show( new ContributionDetails(year, month, contribution, (contribution*0.05), surchargeSum, (surchargeSum + contribution + (contribution*0.05))).Details());
             ////return new ContributionDetails(year, month, contribution, (contribution * 0.05), surchargeSum, (surchargeSum + contribution + (contribution * 0.05)));
-            return new Contributions(year, month, contribution, (contribution * 0.05), surchargeSum, (surchargeSum + contribution + (contribution * 0.05)));
+            return new Contributions(year, month, contribution, Math.Round((contribution * 0.05),2,MidpointRounding.AwayFromZero), Math.Round(surchargeSum,2,MidpointRounding.AwayFromZero), Math.Round((surchargeSum + contribution + (contribution * 0.05)),2,MidpointRounding.AwayFromZero));
 
         }
 

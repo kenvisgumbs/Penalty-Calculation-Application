@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -197,7 +198,16 @@ namespace Penalty_Calculation_Application
             }
 
             completeList.OutputContribution();
-            
+
+            //DateTime dtStartDate = dateTimePicker1.Value;
+            //DateTime dtEndDate = dateTimePicker2.Value;
+            ReportParameter[] rparams = new ReportParameter[3];
+            rparams[0] = new ReportParameter("Employer_no", Emp_TextBox.Text, false);
+            rparams[1] = new ReportParameter("Payment_date", PayDate_DatePicker.Text, false);
+            rparams[2] = new ReportParameter("Employment_sector", Sector_label.Text, false);
+
+            this.reportViewer1.LocalReport.SetParameters(rparams);
+
             ContributionsBindingSource.DataSource = completeList.GetContributionList();
             reportViewer1.RefreshReport();
             
@@ -214,29 +224,34 @@ namespace Penalty_Calculation_Application
         {
             var periods = GetMonthDifference(new DateTime(year, month, 1), Convert.ToDateTime(PayDate_DatePicker.Text));
 
-            double fivepercentUp = contribution + (contribution*0.05);
-            double twopercent = fivepercentUp * 0.02;
+            double fivepercentUp = contribution + RoundDown(contribution*0.05, 2);
+            double twopercent = RoundDown(fivepercentUp * 0.02, 2);
             double surchargeSum = twopercent;
             //MessageBox.Show(new ContributionDetails(year, month, contribution, (contribution * 0.05), surchargeSum,(surchargeSum + contribution + (contribution * 0.05))).Details());
 
             if (periods == 2)
-                return new Contributions(year, month, contribution, Math.Round((contribution * 0.05),2,MidpointRounding.AwayFromZero), 0, Math.Round(contribution +(contribution * 0.05),2,MidpointRounding.AwayFromZero));
+                return new Contributions(year, month, contribution, RoundDown(contribution * 0.05,2), 0, RoundDown(contribution +(contribution * 0.05),2));
                 ////return new ContributionDetails(year, month, contribution, (contribution * 0.05), 0, 0);
 
             if (periods <= 1)
-                return new Contributions(year, month, contribution, 0, 0, 0);
+                return new Contributions(year, month, contribution, 0, 0, contribution);
                 ////return new ContributionDetails(year, month, contribution, 0, 0, 0);
 
             for (int i = 0; i <= periods - 4; i++)
             {
-                fivepercentUp += fivepercentUp * 0.02;
+                fivepercentUp += RoundDown(fivepercentUp * 0.02,2 );
                 twopercent = fivepercentUp * 0.02;
                 surchargeSum += twopercent;
             }
-            //MessageBox.Show( new ContributionDetails(year, month, contribution, (contribution*0.05), surchargeSum, (surchargeSum + contribution + (contribution*0.05))).Details());
-            ////return new ContributionDetails(year, month, contribution, (contribution * 0.05), surchargeSum, (surchargeSum + contribution + (contribution * 0.05)));
-            return new Contributions(year, month, contribution, Math.Round((contribution * 0.05),2,MidpointRounding.AwayFromZero), Math.Round(surchargeSum,2,MidpointRounding.AwayFromZero), Math.Round((surchargeSum + contribution + (contribution * 0.05)),2,MidpointRounding.AwayFromZero));
+            
+            return new Contributions(year, month, contribution, RoundDown(contribution * 0.05, 2), RoundDown(surchargeSum, 2), RoundDown((surchargeSum + contribution + (contribution * 0.05)),2));
 
+        }
+
+        public double RoundDown(double d, int decimals)
+        {
+            double degree = Math.Pow(10, decimals);
+            return Math.Floor(d * degree) / degree;
         }
 
         public static int GetMonthDifference(DateTime endDate, DateTime startDate)

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PenCalcMainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ContributionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.PayDate_Label = new System.Windows.Forms.Label();
             this.PayDate_DatePicker = new System.Windows.Forms.DateTimePicker();
             this.EmploymentSector_Label = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Sector_label = new System.Windows.Forms.Label();
             this.Contribution_Grid = new System.Windows.Forms.DataGridView();
             this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,7 +91,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(32, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,7 +116,7 @@
             this.Emp_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Emp_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.Emp_TextBox.Location = new System.Drawing.Point(122, 122);
-            this.Emp_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Emp_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.Emp_TextBox.Name = "Emp_TextBox";
             this.Emp_TextBox.Size = new System.Drawing.Size(282, 27);
             this.Emp_TextBox.TabIndex = 4;
@@ -138,7 +138,7 @@
             this.PayDate_DatePicker.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.PayDate_DatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.PayDate_DatePicker.Location = new System.Drawing.Point(162, 153);
-            this.PayDate_DatePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PayDate_DatePicker.Margin = new System.Windows.Forms.Padding(2);
             this.PayDate_DatePicker.Name = "PayDate_DatePicker";
             this.PayDate_DatePicker.Size = new System.Drawing.Size(242, 27);
             this.PayDate_DatePicker.TabIndex = 6;
@@ -154,16 +154,15 @@
             this.EmploymentSector_Label.TabIndex = 8;
             this.EmploymentSector_Label.Text = "Employment Sector:";
             // 
-            // label4
+            // Sector_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(196, 185);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 19);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Ipsonian Lebadium";
+            this.Sector_label.AutoSize = true;
+            this.Sector_label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.Sector_label.Location = new System.Drawing.Point(196, 185);
+            this.Sector_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Sector_label.Name = "Sector_label";
+            this.Sector_label.Size = new System.Drawing.Size(0, 19);
+            this.Sector_label.TabIndex = 9;
             // 
             // Contribution_Grid
             // 
@@ -171,30 +170,30 @@
             this.Contribution_Grid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.Contribution_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Contribution_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Contribution_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Contribution_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Contribution_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Contribution_Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Year,
             this.Month,
             this.Contribution});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Contribution_Grid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Contribution_Grid.DefaultCellStyle = dataGridViewCellStyle6;
             this.Contribution_Grid.GridColor = System.Drawing.SystemColors.ControlLight;
             this.Contribution_Grid.Location = new System.Drawing.Point(0, -1);
-            this.Contribution_Grid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Contribution_Grid.Margin = new System.Windows.Forms.Padding(2);
             this.Contribution_Grid.Name = "Contribution_Grid";
             this.Contribution_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.Contribution_Grid.RowTemplate.Height = 23;
@@ -237,7 +236,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Contribution_Grid);
             this.panel1.Location = new System.Drawing.Point(36, 226);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 135);
             this.panel1.TabIndex = 11;
@@ -249,7 +248,7 @@
             this.Calc_Button.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Calc_Button.ForeColor = System.Drawing.SystemColors.Window;
             this.Calc_Button.Location = new System.Drawing.Point(36, 385);
-            this.Calc_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Calc_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Calc_Button.Name = "Calc_Button";
             this.Calc_Button.Size = new System.Drawing.Size(108, 35);
             this.Calc_Button.TabIndex = 12;
@@ -273,12 +272,12 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "PenaltyData";
-            reportDataSource1.Value = this.ContributionsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "PenaltyData";
+            reportDataSource3.Value = this.ContributionsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Penalty_Calculation_Application.PenReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(422, 122);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(513, 239);
@@ -299,7 +298,7 @@
             this.Controls.Add(this.Error_label);
             this.Controls.Add(this.Calc_Button);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Sector_label);
             this.Controls.Add(this.EmploymentSector_Label);
             this.Controls.Add(this.PayDate_DatePicker);
             this.Controls.Add(this.PayDate_Label);
@@ -309,7 +308,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PenCalcMainForm";
             this.Text = "ASSB Penalty Calculator";
             this.Load += new System.EventHandler(this.PenCalcMainForm_Load);
@@ -333,7 +332,7 @@
         private System.Windows.Forms.Label PayDate_Label;
         private System.Windows.Forms.DateTimePicker PayDate_DatePicker;
         private System.Windows.Forms.Label EmploymentSector_Label;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Sector_label;
         private System.Windows.Forms.DataGridView Contribution_Grid;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Calc_Button;

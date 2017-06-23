@@ -44,33 +44,6 @@ namespace Penalty_Calculation_Application
             completeContributionList.Add(cont);
         }
 
-        /*
-        public int GetYear()
-        {
-            return Year;
-        }
-        public int GetMonth()
-        {
-            return Month;
-        }
-        public double GetAmount()
-        {
-            return Amount;
-        }
-        public double GetSurcharge()
-        {
-            return Surcharge;
-        }
-        public double AdditionalSurcharge()
-        {
-            return AdditionalSurcharge;
-        }
-        public double GetTotalDebt()
-        {
-            return TotalDebt;
-        }
-        */
-
         public List<Contributions> GetContributionList()
         {
             

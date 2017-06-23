@@ -57,22 +57,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.84316in</Width>
+                  <Width>0.70588in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.74012in</Width>
+                  <Width>0.91931in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.15187in</Width>
+                  <Width>1.39412in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.00364in</Width>
+                  <Width>1.20551in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1212in</Width>
+                  <Width>1.16157in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.38546in</Width>
+                  <Width>1.53098in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -433,7 +433,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <LeftBorder>
@@ -477,7 +477,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <LeftBorder>
@@ -509,6 +509,7 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -521,7 +522,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <LeftBorder>
@@ -553,6 +554,7 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -565,7 +567,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <LeftBorder>
@@ -597,6 +599,7 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -609,7 +612,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <LeftBorder>
@@ -641,6 +644,7 @@
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -653,7 +657,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <LeftBorder>
@@ -703,7 +707,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <BackgroundColor>Silver</BackgroundColor>
@@ -741,7 +745,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <BackgroundColor>Silver</BackgroundColor>
@@ -768,6 +772,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>SemiBold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -780,7 +785,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <BackgroundColor>Silver</BackgroundColor>
@@ -807,6 +812,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>SemiBold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -819,7 +825,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <BackgroundColor>Silver</BackgroundColor>
@@ -846,6 +852,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>SemiBold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -858,7 +865,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <BackgroundColor>Silver</BackgroundColor>
@@ -885,6 +892,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>SemiBold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -897,7 +905,7 @@
                           <Style>
                             <Border>
                               <Color>Silver</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                               <Width>0.3pt</Width>
                             </Border>
                             <BackgroundColor>Silver</BackgroundColor>
@@ -1014,6 +1022,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>13pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -1057,6 +1066,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>13pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -1100,6 +1110,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>13pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -1143,6 +1154,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>13pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -1190,7 +1202,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.95976in</Size>
+                    <Size>0.9368in</Size>
                     <CellContents>
                       <Textbox Name="Textbox52">
                         <CanGrow>true</CanGrow>
@@ -1261,7 +1273,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.95976in</Size>
+                    <Size>0.9368in</Size>
                     <CellContents>
                       <Textbox Name="Year">
                         <CanGrow>true</CanGrow>
@@ -1311,7 +1323,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.95976in</Size>
+                    <Size>0.9368in</Size>
                     <CellContents>
                       <Textbox Name="Textbox75">
                         <CanGrow>true</CanGrow>
@@ -1362,7 +1374,7 @@
             <Top>1.4125in</Top>
             <Left>0.125in</Left>
             <Height>1.04696in</Height>
-            <Width>7.2052in</Width>
+            <Width>7.85417in</Width>
             <Style>
               <Border>
                 <Color>Silver</Color>
@@ -1379,8 +1391,8 @@
                   <TextRun>
                     <Value>=Parameters!Employer_no.Value</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>11pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1389,15 +1401,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Employer_no</rd:DefaultName>
-            <Top>0.67792in</Top>
-            <Left>2.05006in</Left>
-            <Height>0.25in</Height>
-            <Width>3.725in</Width>
+            <Top>0.65214in</Top>
+            <Left>2.20884in</Left>
+            <Height>0.3in</Height>
+            <Width>3.47317in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1413,8 +1426,8 @@
                   <TextRun>
                     <Value>Employer:</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>11pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1423,15 +1436,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox83</rd:DefaultName>
-            <Top>0.67792in</Top>
-            <Left>1.3459in</Left>
-            <Height>0.25in</Height>
-            <Width>0.77708in</Width>
+            <Top>0.65214in</Top>
+            <Left>1.2959in</Left>
+            <Height>0.3in</Height>
+            <Width>0.89905in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1447,8 +1461,8 @@
                   <TextRun>
                     <Value>Payment Date: </Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>11pt</FontSize>
                       <FontWeight>Light</FontWeight>
                     </Style>
                   </TextRun>
@@ -1457,15 +1471,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox83</rd:DefaultName>
-            <Top>0.84736in</Top>
-            <Left>1.3459in</Left>
-            <Height>0.25in</Height>
-            <Width>1.11459in</Width>
+            <Top>0.78486in</Top>
+            <Left>1.2959in</Left>
+            <Height>0.3in</Height>
+            <Width>1.14438in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1481,8 +1496,8 @@
                   <TextRun>
                     <Value>=FormatDateTime(Parameters!Payment_date.Value,DateFormat.ShortDate)</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>11pt</FontSize>
                       <FontWeight>Light</FontWeight>
                     </Style>
                   </TextRun>
@@ -1491,15 +1506,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Employer_no</rd:DefaultName>
-            <Top>0.84736in</Top>
-            <Left>2.40006in</Left>
-            <Height>0.25in</Height>
-            <Width>3.375in</Width>
+            <Top>0.78486in</Top>
+            <Left>2.45418in</Left>
+            <Height>0.3in</Height>
+            <Width>3.22783in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1515,8 +1531,8 @@
                   <TextRun>
                     <Value>=Parameters!Employment_sector.Value</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>11pt</FontSize>
                       <FontWeight>Light</FontWeight>
                     </Style>
                   </TextRun>
@@ -1525,15 +1541,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Employer_no</rd:DefaultName>
-            <Top>1.01881in</Top>
-            <Left>2.78548in</Left>
-            <Height>0.25in</Height>
-            <Width>2.98958in</Width>
+            <Top>1.00631in</Top>
+            <Left>2.96459in</Left>
+            <Height>0.3in</Height>
+            <Width>2.71742in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1549,8 +1566,8 @@
                   <TextRun>
                     <Value>Employment Sector:</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>11pt</FontSize>
                       <FontWeight>Light</FontWeight>
                     </Style>
                   </TextRun>
@@ -1559,15 +1576,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox83</rd:DefaultName>
-            <Top>1.01881in</Top>
-            <Left>1.3459in</Left>
-            <Height>0.25in</Height>
-            <Width>1.58334in</Width>
+            <Top>1.00631in</Top>
+            <Left>1.2959in</Left>
+            <Height>0.3in</Height>
+            <Width>1.6548in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1598,8 +1616,8 @@
                   <TextRun>
                     <Value>Anguilla Social Security Board</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>19pt</FontSize>
+                      <FontFamily>Open Sans</FontFamily>
+                      <FontSize>17pt</FontSize>
                       <Color>#003663</Color>
                     </Style>
                   </TextRun>
@@ -1608,19 +1626,19 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox88</rd:DefaultName>
-            <Top>0.1625in</Top>
-            <Left>1.34798in</Left>
+            <Top>0.1in</Top>
+            <Left>1.2959in</Left>
             <Height>0.41806in</Height>
-            <Width>4.43403in</Width>
+            <Width>4.38611in</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
               <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>1pt</PaddingRight>
+              <PaddingTop>1pt</PaddingTop>
+              <PaddingBottom>1pt</PaddingBottom>
             </Style>
           </Textbox>
           <Textbox Name="Textbox89">
@@ -1632,8 +1650,9 @@
                   <TextRun>
                     <Value>Penalty Calculator Table</Value>
                     <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>16pt</FontSize>
+                      <FontFamily>Open Sans Light</FontFamily>
+                      <FontSize>15pt</FontSize>
+                      <FontWeight>ExtraLight</FontWeight>
                       <Color>#0c5f69</Color>
                     </Style>
                   </TextRun>
@@ -1642,10 +1661,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox88</rd:DefaultName>
-            <Top>0.42292in</Top>
-            <Left>1.34798in</Left>
-            <Height>0.37583in</Height>
-            <Width>4.43611in</Width>
+            <Top>0.35556in</Top>
+            <Left>1.2959in</Left>
+            <Height>0.29736in</Height>
+            <Width>4.38611in</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -1661,7 +1680,7 @@
             <Top>0.09821in</Top>
             <Left>0.125in</Left>
             <Height>0in</Height>
-            <Width>8.20947in</Width>
+            <Width>7.85417in</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -1675,7 +1694,7 @@
             <Top>1.33472in</Top>
             <Left>0.125in</Left>
             <Height>0in</Height>
-            <Width>8.20947in</Width>
+            <Width>7.85417in</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -1690,10 +1709,8 @@
         <Style>
           <Border>
             <Style>None</Style>
+            <Width>0.25pt</Width>
           </Border>
-          <BottomBorder>
-            <Width>0.3pt</Width>
-          </BottomBorder>
         </Style>
       </Body>
       <Width>8.5in</Width>

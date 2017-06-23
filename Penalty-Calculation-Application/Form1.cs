@@ -19,43 +19,9 @@ namespace Penalty_Calculation_Application
         {
             InitializeComponent();
         }
-
-        //private List<ContributionObj> _userContValues = new List<ContributionObj>();
-        ////private List<ContributionDetails> _userContValuesComplete = new List<ContributionDetails>();
+        
         private List<Contributions> _userContValuesComplete = new List<Contributions>();
         private Contributions completeList = new Contributions();
-
-        /*public class ContributionObj
-        {
-            private readonly int _year;
-            private readonly int _month;
-            private readonly double _amount;
-
-            public ContributionObj()
-            {
-                _year = 1990;
-                _month = 1;
-                _amount = 0.00;
-            }
-            public ContributionObj(int a, int b, double c)
-            {
-                _year = a;
-                _month = b;
-                _amount = c;
-            }
-            public int GetYear()
-            {
-                return _year;
-            }
-            public int GetMonth()
-            {
-                return _month;
-            }
-            public double GetAmount()
-            {
-                return _amount;
-            }
-        }*/
 
         public class ContributionDetails
         {
@@ -150,28 +116,6 @@ namespace Penalty_Calculation_Application
             }
         }
 
-        /*private void DisplayRowData()
-        {
-            String list = "";
-            foreach (DataGridViewRow row in Contribution_Grid.Rows)
-            {
-                if (row.IsNewRow) continue;
-                _userContValues.Add(new ContributionObj(Convert.ToInt32(row.Cells["Year"].Value), Convert.ToInt32(row.Cells["Month"].Value), Convert.ToDouble(row.Cells["Contribution"].Value)));
-            }
-
-            foreach (ContributionObj c in _userContValues)
-            {
-                list += c.GetYear() + " " + c.GetMonth() + " " + c.GetAmount() + "\n";
-            }
-            
-            list += GetMonthDifference(new DateTime(_userContValues[0].GetYear(), _userContValues[0].GetMonth(), 1), Convert.ToDateTime(PayDate_DatePicker.Text));
-
-            MessageBox.Show(CalculateSurcharge(_userContValues[0].GetYear(), _userContValues[0].GetMonth(), _userContValues[0].GetAmount()).Details());
-            _userContValues.Clear();
-            list="";
-
-        }*/
-
         public void BuildList(int year, int month, double contribution)
         {
             var periods = GetMonthDifference(new DateTime(year, month, 1), Convert.ToDateTime(PayDate_DatePicker.Text));
@@ -189,7 +133,6 @@ namespace Penalty_Calculation_Application
                     if(Convert.ToInt32(row.Cells["Year"].Value) == currentYear && Convert.ToInt32(row.Cells["Month"].Value) == currentMonth)
                         currentContribution = Convert.ToDouble(row.Cells["Contribution"].Value);
                 }
-                //_userContValuesComplete.Add(CalculateSurcharge(currentYear, currentMonth, currentContribution));
                 completeList.Add(CalculateSurcharge(currentYear, currentMonth, currentContribution));
                 currentMonth++;
                 if (currentMonth <= 12) continue;
@@ -198,9 +141,7 @@ namespace Penalty_Calculation_Application
             }
 
             completeList.OutputContribution();
-
-            //DateTime dtStartDate = dateTimePicker1.Value;
-            //DateTime dtEndDate = dateTimePicker2.Value;
+            
             ReportParameter[] rparams = new ReportParameter[3];
             rparams[0] = new ReportParameter("Employer_no", Emp_TextBox.Text, false);
             rparams[1] = new ReportParameter("Payment_date", PayDate_DatePicker.Text, false);
@@ -210,45 +151,34 @@ namespace Penalty_Calculation_Application
 
             ContributionsBindingSource.DataSource = completeList.GetContributionList();
             reportViewer1.RefreshReport();
-            
-            ////foreach (ContributionDetails cd in _userContValuesComplete)
-            //foreach (Contributions cd in _userContValuesComplete)
-            //{
-            //   System.Diagnostics.Debug.WriteLine(cd.Details());
-            //}
-            //_userContValuesComplete.Clear();
         }
 
-        ////public ContributionDetails CalculateSurcharge(int year, int month, double contribution)
         public Contributions CalculateSurcharge(int year, int month, double contribution)
         {
             var periods = GetMonthDifference(new DateTime(year, month, 1), Convert.ToDateTime(PayDate_DatePicker.Text));
 
-            double fivepercentUp = contribution + RoundDown(contribution*0.05, 2);
+            double fivepercentUp = RoundDown(contribution + RoundDown(contribution*0.05, 2),2) - 0.01;
             double twopercent = RoundDown(fivepercentUp * 0.02, 2);
             double surchargeSum = twopercent;
-            //MessageBox.Show(new ContributionDetails(year, month, contribution, (contribution * 0.05), surchargeSum,(surchargeSum + contribution + (contribution * 0.05))).Details());
 
             if (periods == 2)
                 return new Contributions(year, month, contribution, RoundDown(contribution * 0.05,2), 0, RoundDown(contribution +(contribution * 0.05),2));
-                ////return new ContributionDetails(year, month, contribution, (contribution * 0.05), 0, 0);
 
             if (periods <= 1)
                 return new Contributions(year, month, contribution, 0, 0, contribution);
-                ////return new ContributionDetails(year, month, contribution, 0, 0, 0);
 
             for (int i = 0; i <= periods - 4; i++)
             {
-                fivepercentUp += RoundDown(fivepercentUp * 0.02,2 );
+                fivepercentUp += fivepercentUp * 0.02;
                 twopercent = fivepercentUp * 0.02;
                 surchargeSum += twopercent;
             }
             
-            return new Contributions(year, month, contribution, RoundDown(contribution * 0.05, 2), RoundDown(surchargeSum, 2), RoundDown((surchargeSum + contribution + (contribution * 0.05)),2));
+            return new Contributions(year, month, contribution, contribution * 0.05, surchargeSum, (surchargeSum + contribution + (contribution * 0.05)));
 
         }
 
-        public double RoundDown(double d, int decimals)
+        public static double RoundDown(double d, int decimals)
         {
             double degree = Math.Pow(10, decimals);
             return Math.Floor(d * degree) / degree;
@@ -262,7 +192,6 @@ namespace Penalty_Calculation_Application
 
         private void PenCalcMainForm_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 

@@ -44,19 +44,22 @@
             this.EmploymentSector_Label = new System.Windows.Forms.Label();
             this.Sector_label = new System.Windows.Forms.Label();
             this.Contribution_Grid = new System.Windows.Forms.DataGridView();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contribution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Calc_Button = new System.Windows.Forms.Button();
             this.Error_label = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.contributionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.DeleteRowCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contribution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ContributionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Contribution_Grid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contributionsBindingSource1)).BeginInit();
+            this.DeleteRowCMS.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContributionsBindingSource
@@ -200,36 +203,7 @@
             this.Contribution_Grid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Contribution_Grid.Size = new System.Drawing.Size(366, 106);
             this.Contribution_Grid.TabIndex = 0;
-            // 
-            // Year
-            // 
-            this.Year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Year.FillWeight = 60F;
-            this.Year.HeaderText = "Year";
-            this.Year.MaxInputLength = 4;
-            this.Year.Name = "Year";
-            this.Year.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Year.ToolTipText = "Contriution year";
-            // 
-            // Month
-            // 
-            this.Month.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Month.FillWeight = 60F;
-            this.Month.HeaderText = "Month";
-            this.Month.MaxInputLength = 2;
-            this.Month.Name = "Month";
-            this.Month.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Month.ToolTipText = "Contribution month";
-            // 
-            // Contribution
-            // 
-            this.Contribution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Contribution.FillWeight = 60F;
-            this.Contribution.HeaderText = "Contribution";
-            this.Contribution.MaxInputLength = 6;
-            this.Contribution.Name = "Contribution";
-            this.Contribution.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Contribution.ToolTipText = "Contribution amount";
+            this.Contribution_Grid.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Contribution_Grid_CellMouseUp);
             // 
             // panel1
             // 
@@ -288,6 +262,52 @@
             // 
             this.contributionsBindingSource1.DataSource = typeof(Penalty_Calculation_Application.Contributions);
             // 
+            // DeleteRowCMS
+            // 
+            this.DeleteRowCMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteRowToolStripMenuItem});
+            this.DeleteRowCMS.Name = "DeleteRowCMS";
+            this.DeleteRowCMS.Size = new System.Drawing.Size(134, 26);
+            this.DeleteRowCMS.Opening += new System.ComponentModel.CancelEventHandler(this.DeleteRowCMS_Opening);
+            this.DeleteRowCMS.Click += new System.EventHandler(this.DeleteRowCMS_Click);
+            // 
+            // deleteRowToolStripMenuItem
+            // 
+            this.deleteRowToolStripMenuItem.Name = "deleteRowToolStripMenuItem";
+            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.deleteRowToolStripMenuItem.Text = "Delete Row";
+            this.deleteRowToolStripMenuItem.Click += new System.EventHandler(this.deleteRowToolStripMenuItem_Click);
+            // 
+            // Year
+            // 
+            this.Year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Year.FillWeight = 60F;
+            this.Year.HeaderText = "Year";
+            this.Year.MaxInputLength = 4;
+            this.Year.Name = "Year";
+            this.Year.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Year.ToolTipText = "Contriution year";
+            // 
+            // Month
+            // 
+            this.Month.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Month.FillWeight = 60F;
+            this.Month.HeaderText = "Month";
+            this.Month.MaxInputLength = 2;
+            this.Month.Name = "Month";
+            this.Month.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Month.ToolTipText = "Contribution month";
+            // 
+            // Contribution
+            // 
+            this.Contribution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Contribution.FillWeight = 60F;
+            this.Contribution.HeaderText = "Contribution";
+            this.Contribution.MaxInputLength = 6;
+            this.Contribution.Name = "Contribution";
+            this.Contribution.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Contribution.ToolTipText = "Contribution amount";
+            // 
             // PenCalcMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +337,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Contribution_Grid)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contributionsBindingSource1)).EndInit();
+            this.DeleteRowCMS.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,13 +357,15 @@
         private System.Windows.Forms.DataGridView Contribution_Grid;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Calc_Button;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Month;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contribution;
         private System.Windows.Forms.Label Error_label;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource ContributionsBindingSource;
         private System.Windows.Forms.BindingSource contributionsBindingSource1;
+        private System.Windows.Forms.ContextMenuStrip DeleteRowCMS;
+        private System.Windows.Forms.ToolStripMenuItem deleteRowToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Month;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contribution;
     }
 }
 

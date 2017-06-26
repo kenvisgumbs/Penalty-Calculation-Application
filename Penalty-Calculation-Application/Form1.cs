@@ -14,6 +14,7 @@ namespace Penalty_Calculation_Application
 {
     public partial class PenCalcMainForm : Form
     {
+        int rowIndex;
 
         public PenCalcMainForm()
         {
@@ -198,6 +199,37 @@ namespace Penalty_Calculation_Application
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Contribution_Grid_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+            if (e.Button == MouseButtons.Right)
+            {
+                this.Contribution_Grid.Rows[e.RowIndex].Selected = true;
+                rowIndex = e.RowIndex;
+                this.Contribution_Grid.CurrentCell = this.Contribution_Grid.Rows[e.RowIndex].Cells[1];
+                this.DeleteRowCMS.Show(this.Contribution_Grid, e.Location);
+                DeleteRowCMS.Show(Cursor.Position);
+            }
+        }
+
+        private void DeleteRowCMS_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void deleteRowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteRowCMS_Click(object sender, EventArgs e)
+        {
+            if (!this.Contribution_Grid.Rows[this.rowIndex].IsNewRow)
+            {
+                this.Contribution_Grid.Rows.RemoveAt(this.rowIndex);
+            }
         }
     }
 

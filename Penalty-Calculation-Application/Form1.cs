@@ -221,7 +221,7 @@ namespace Penalty_Calculation_Application
 
         private void deleteRowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void DeleteRowCMS_Click(object sender, EventArgs e)

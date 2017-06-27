@@ -16,7 +16,7 @@ namespace Penalty_Calculation_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PenCalcMainForm());
+            Application.Run(new login());
         }
     }
 }

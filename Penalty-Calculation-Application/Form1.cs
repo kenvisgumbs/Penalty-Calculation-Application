@@ -15,74 +15,28 @@ namespace Penalty_Calculation_Application
     public partial class PenCalcMainForm : Form
     {
         int rowIndex;
+        private IBMData idb;
+
+        public PenCalcMainForm(IBMData IBMobject)
+        {
+            InitializeComponent();
+            idb = IBMobject;
+            SetupEmployerList();
+        }
 
         public PenCalcMainForm()
         {
             InitializeComponent();
         }
-        
+
         private List<Contributions> _userContValuesComplete = new List<Contributions>();
         private Contributions completeList = new Contributions();
-
-        public class ContributionDetails
+        
+        public void SetupEmployerList()
         {
-            private  int _year;
-            private  int _month;
-            private  double _amount;
-            private  double _surcharge;
-            private  double _additionalSurcharge;
-            private  double _totalDebt;
-
-            public ContributionDetails()
-            {
-                _year = 1990;
-                _month = 1;
-                _amount = 0.00;
-                _surcharge = 0.00;
-                _additionalSurcharge = 0.00;
-                _totalDebt = 0.00;
-            }
-
-            public ContributionDetails(int a, int b, double c, double d, double e, double f)
-            {
-                _year = a;
-                _month = b;
-                _amount = c;
-                _surcharge = d;
-                _additionalSurcharge = e;
-                _totalDebt = f;
-            }
-
-            public int GetYear()
-            {
-                return _year;
-            }
-            public int GetMonth()
-            {
-                return _month;
-            }
-            public double GetAmount()
-            {
-                return _amount;
-            }
-            public double GetSurcharge()
-            {
-                return _surcharge;
-            }
-            public double AdditionalSurcharge()
-            {
-                return _additionalSurcharge;
-            }
-            public double GetTotalDebt()
-            {
-                return _totalDebt;
-            }
-
-            public string Details()
-            {
-                return _year + @" " + _month + @" " + Math.Round(_amount, 2, MidpointRounding.AwayFromZero) + @" " + Math.Round(_surcharge, 2, MidpointRounding.AwayFromZero) + @" " + Math.Round(_additionalSurcharge, 2, MidpointRounding.AwayFromZero) + @" " +
-                       Math.Round(_totalDebt, 2, MidpointRounding.AwayFromZero);
-            }
+            AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
+            idb.getEmployers(DataCollection);
+            Emp_TextBox.AutoCompleteCustomSource = DataCollection;
         }
 
         private void Calc_Button_Click(object sender, EventArgs e)
@@ -91,6 +45,7 @@ namespace Penalty_Calculation_Application
             {
                 int a, b;
                 double c;
+
                 if (GetMonthDifference(
                     new DateTime(Convert.ToInt32(Contribution_Grid.Rows[0].Cells["Year"].Value),
                         Convert.ToInt32(Contribution_Grid.Rows[0].Cells["Month"].Value), 1),
@@ -123,6 +78,8 @@ namespace Penalty_Calculation_Application
             var currentYear = year;
             var currentMonth = month;
             var currentContribution = contribution;
+            String s, s2;
+            StringBuilder aStringBuilder;
 
             completeList.ClearList(); //move to function
             for (var i = 0; i <= periods; i++)
@@ -142,9 +99,16 @@ namespace Penalty_Calculation_Application
             }
 
             completeList.OutputContribution();
-            
+
+            s = "000000000";
+            s2 = Emp_TextBox.Text.Substring(0, Emp_TextBox.Text.IndexOf(' '));
+            aStringBuilder = new StringBuilder(s);
+            aStringBuilder.Remove(9 - s2.Length, s2.Length);
+            aStringBuilder.Insert(9 - s2.Length, s2);
+            s = aStringBuilder.ToString() + "-000 " + Emp_TextBox.Text.Substring(Emp_TextBox.Text.IndexOf(' ') + 1);
+
             ReportParameter[] rparams = new ReportParameter[3];
-            rparams[0] = new ReportParameter("Employer_no", Emp_TextBox.Text, false);
+            rparams[0] = new ReportParameter("Employer_no", s, false);
             rparams[1] = new ReportParameter("Payment_date", PayDate_DatePicker.Text, false);
             rparams[2] = new ReportParameter("Employment_sector", Sector_label.Text, false);
 
@@ -196,10 +160,7 @@ namespace Penalty_Calculation_Application
             this.reportViewer1.RefreshReport();
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void Contribution_Grid_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {

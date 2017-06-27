@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PenCalcMainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ContributionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +44,9 @@
             this.EmploymentSector_Label = new System.Windows.Forms.Label();
             this.Sector_label = new System.Windows.Forms.Label();
             this.Contribution_Grid = new System.Windows.Forms.DataGridView();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contribution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Calc_Button = new System.Windows.Forms.Button();
             this.Error_label = new System.Windows.Forms.Label();
@@ -51,9 +54,7 @@
             this.contributionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteRowCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contribution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.ContributionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Contribution_Grid)).BeginInit();
@@ -114,9 +115,10 @@
             // 
             // Emp_TextBox
             // 
+            this.Emp_TextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Emp_TextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.Emp_TextBox.BackColor = System.Drawing.SystemColors.Window;
             this.Emp_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Emp_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Emp_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.Emp_TextBox.Location = new System.Drawing.Point(97, 79);
             this.Emp_TextBox.Margin = new System.Windows.Forms.Padding(2);
@@ -173,27 +175,27 @@
             this.Contribution_Grid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.Contribution_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Contribution_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Contribution_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Contribution_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Contribution_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Contribution_Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Year,
             this.Month,
             this.Contribution});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Contribution_Grid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Contribution_Grid.DefaultCellStyle = dataGridViewCellStyle6;
             this.Contribution_Grid.GridColor = System.Drawing.SystemColors.ControlLight;
             this.Contribution_Grid.Location = new System.Drawing.Point(0, -1);
             this.Contribution_Grid.Margin = new System.Windows.Forms.Padding(2);
@@ -204,6 +206,36 @@
             this.Contribution_Grid.Size = new System.Drawing.Size(366, 106);
             this.Contribution_Grid.TabIndex = 0;
             this.Contribution_Grid.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Contribution_Grid_CellMouseUp);
+            // 
+            // Year
+            // 
+            this.Year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Year.FillWeight = 60F;
+            this.Year.HeaderText = "Year";
+            this.Year.MaxInputLength = 4;
+            this.Year.Name = "Year";
+            this.Year.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Year.ToolTipText = "Contriution year";
+            // 
+            // Month
+            // 
+            this.Month.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Month.FillWeight = 60F;
+            this.Month.HeaderText = "Month";
+            this.Month.MaxInputLength = 2;
+            this.Month.Name = "Month";
+            this.Month.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Month.ToolTipText = "Contribution month";
+            // 
+            // Contribution
+            // 
+            this.Contribution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Contribution.FillWeight = 60F;
+            this.Contribution.HeaderText = "Contribution";
+            this.Contribution.MaxInputLength = 6;
+            this.Contribution.Name = "Contribution";
+            this.Contribution.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Contribution.ToolTipText = "Contribution amount";
             // 
             // panel1
             // 
@@ -246,9 +278,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "PenaltyData";
-            reportDataSource1.Value = this.ContributionsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "PenaltyData";
+            reportDataSource3.Value = this.ContributionsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Penalty_Calculation_Application.PenReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(397, 79);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
@@ -256,7 +288,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(783, 298);
             this.reportViewer1.TabIndex = 14;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // contributionsBindingSource1
             // 
@@ -277,36 +308,6 @@
             this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.deleteRowToolStripMenuItem.Text = "Delete Row";
             this.deleteRowToolStripMenuItem.Click += new System.EventHandler(this.deleteRowToolStripMenuItem_Click);
-            // 
-            // Year
-            // 
-            this.Year.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Year.FillWeight = 60F;
-            this.Year.HeaderText = "Year";
-            this.Year.MaxInputLength = 4;
-            this.Year.Name = "Year";
-            this.Year.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Year.ToolTipText = "Contriution year";
-            // 
-            // Month
-            // 
-            this.Month.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Month.FillWeight = 60F;
-            this.Month.HeaderText = "Month";
-            this.Month.MaxInputLength = 2;
-            this.Month.Name = "Month";
-            this.Month.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Month.ToolTipText = "Contribution month";
-            // 
-            // Contribution
-            // 
-            this.Contribution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Contribution.FillWeight = 60F;
-            this.Contribution.HeaderText = "Contribution";
-            this.Contribution.MaxInputLength = 6;
-            this.Contribution.Name = "Contribution";
-            this.Contribution.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Contribution.ToolTipText = "Contribution amount";
             // 
             // PenCalcMainForm
             // 
@@ -330,6 +331,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PenCalcMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASSB Penalty Calculator";
             this.Load += new System.EventHandler(this.PenCalcMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ContributionsBindingSource)).EndInit();
@@ -366,6 +368,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Month;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contribution;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
